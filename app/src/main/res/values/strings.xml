@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SimpleNews</string>
+    <string name="error_invalid_password">invalid password</string>
+    <string name="error_invalid_username">invalid username</string>
+    <string name="error_incorrect_password">incorrect password</string>
+    <string name="error_incorrect_username">incorrect username</string>
+</resources>
