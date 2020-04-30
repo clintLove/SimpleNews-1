@@ -20,8 +20,12 @@ public class QueryUtils {
 
     public static String makeUri(String type, String uname, String psw, String phone){
         Uri baseUri;
-        if(type.equals("login")) baseUri = Uri.parse(LOGIN_REQUEST_URL);
-        else baseUri = Uri.parse(REGISTER_REQUEST_URL);
+        if(type.equals("login")) {
+            baseUri = Uri.parse(LOGIN_REQUEST_URL);
+        }
+        else {
+            baseUri = Uri.parse(REGISTER_REQUEST_URL);
+        }
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         uriBuilder.appendQueryParameter("username", uname);

@@ -24,7 +24,6 @@ public class RegisterActivity extends AppCompatActivity {
     EditText usernameView;
     EditText passwordView;
     EditText phoneView;
-    String uname, psw, phone;
     Button register_btn;
 
     @Override
@@ -34,13 +33,13 @@ public class RegisterActivity extends AppCompatActivity {
         usernameView = findViewById(R.id.register_username);
         passwordView = findViewById(R.id.register_password);
         phoneView = findViewById(R.id.register_phone);
-        uname = usernameView.getText().toString();
-        psw = passwordView.getText().toString();
-        phone = phoneView.getText().toString();
         register_btn=findViewById(R.id.register_button);
         register_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String uname = usernameView.getText().toString();
+                String psw = passwordView.getText().toString();
+                String phone = phoneView.getText().toString();
                 RegisterTask myTask = new RegisterTask(uname, psw, phone);
                 myTask.execute();
             }
@@ -82,6 +81,7 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast toast = Toast.makeText(RegisterActivity.this, "注册成功！", Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.TOP | Gravity.CENTER, 0, 100);
                 toast.show();
+                finish();
             }
             else{
                 Toast toast = Toast.makeText(RegisterActivity.this, "注册失败！", Toast.LENGTH_SHORT);
